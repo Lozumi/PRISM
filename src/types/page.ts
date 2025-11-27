@@ -12,6 +12,7 @@ export interface PublicationPageConfig extends BasePageConfig {
 export interface TextPageConfig extends BasePageConfig {
     type: 'text';
     source: string;
+    pdf?: string;
 }
 
 export interface CardItem {
@@ -22,9 +23,11 @@ export interface CardItem {
     tags?: string[];
     link?: string;
     image?: string;
+    category?: string;
 }
 
 export interface CardPageConfig extends BasePageConfig {
     type: 'card';
     items: CardItem[];
+    categories?: string[];
 }

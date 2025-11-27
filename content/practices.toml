@@ -1,6 +1,6 @@
 type = "card"
-title = "Internship and Practical Training"
-description = "Professional services, community involvement, and teaching activities."
+title = "Practices"
+description = "Internships, academic services, teaching, and community involvement."
 categories = ["Internship", "Academic", "Teaching", "Volunteer"]
 
 [[items]]

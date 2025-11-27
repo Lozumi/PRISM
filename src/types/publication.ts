@@ -66,15 +66,6 @@ export type PublicationStatus =
   | 'in-preparation'
   | 'draft';
 
-export type ResearchArea =
-  | 'ai-healthcare'
-  | 'signal-processing'
-  | 'reliability-engineering'
-  | 'quantum-computing'
-  | 'machine-learning'
-  | 'fault-diagnosis'
-  | 'neural-networks'
-  | 'transformer-architectures'
-  | 'biomedical-engineering'
-  | 'other';
+// Research area can be any string, allowing for custom areas
+export type ResearchArea = string;
 

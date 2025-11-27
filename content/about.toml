@@ -3,9 +3,10 @@ title = "About"
 
 [profile]
 research_interests = [
-  "Computational Physics",
-  "Mathematical Principles",
-  "Proof of Theorems"
+  "Embodied Intelligence",
+  "UAV Vision-Language Navigation",
+  "UAV 3D Spatial Understanding",
+  "Intelligent Video Understanding"
 ]
 
 [[sections]]

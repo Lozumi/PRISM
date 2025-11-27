@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getPageConfig, getMarkdownContent, getBibtexContent } from '@/lib/content';
+import { getPageConfig, getMarkdownContent, getBibtexContent, getTomlContent, getPublicationsFromToml } from '@/lib/content';
 import { getConfig } from '@/lib/config';
 import { parseBibTeX } from '@/lib/bibtexParser';
 import PublicationsList from '@/components/publications/PublicationsList';
@@ -11,6 +11,7 @@ import {
     TextPageConfig,
     CardPageConfig
 } from '@/types/page';
+import { Publication } from '@/types/publication';
 
 import { Metadata } from 'next';
 
@@ -61,7 +62,20 @@ export default async function DynamicPage({ params }: { params: Promise<{ slug: 
 }
 
 function PublicationPage({ config }: { config: PublicationPageConfig }) {
-    const bibtex = getBibtexContent(config.source);
+    // Try to read from TOML first (if source ends with .toml or no source specified)
+    if (!config.source || config.source.endsWith('.toml')) {
+        try {
+            const publications = getPublicationsFromToml(config.source || 'publications.toml');
+            if (publications.length > 0) {
+                return <PublicationsList config={config} publications={publications} />;
+            }
+        } catch {
+            // Fall through to BibTeX fallback
+        }
+    }
+    
+    // Fallback to BibTeX format
+    const bibtex = getBibtexContent(config.source || 'publications.bib');
     const publications = parseBibTeX(bibtex);
     return <PublicationsList config={config} publications={publications} />;
 }

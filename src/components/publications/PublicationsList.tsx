@@ -14,6 +14,7 @@ import {
 import { Publication } from '@/types/publication';
 import { PublicationPageConfig } from '@/types/page';
 import { cn } from '@/lib/utils';
+import { generateAreaColor } from '@/lib/bibtexParser';
 
 interface PublicationsListProps {
     config: PublicationPageConfig;
@@ -25,11 +26,12 @@ export default function PublicationsList({ config, publications, embedded = fals
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedYear, setSelectedYear] = useState<number | 'all'>('all');
     const [selectedType, setSelectedType] = useState<string | 'all'>('all');
+    const [selectedArea, setSelectedArea] = useState<string | 'all'>('all');
     const [showFilters, setShowFilters] = useState(false);
     const [expandedBibtexId, setExpandedBibtexId] = useState<string | null>(null);
     const [expandedAbstractId, setExpandedAbstractId] = useState<string | null>(null);
 
-    // Extract unique years and types for filters
+    // Extract unique years, types, and areas for filters
     const years = useMemo(() => {
         const uniqueYears = Array.from(new Set(publications.map(p => p.year)));
         return uniqueYears.sort((a, b) => b - a);
@@ -38,6 +40,11 @@ export default function PublicationsList({ config, publications, embedded = fals
     const types = useMemo(() => {
         const uniqueTypes = Array.from(new Set(publications.map(p => p.type)));
         return uniqueTypes.sort();
+    }, [publications]);
+
+    const areas = useMemo(() => {
+        const uniqueAreas = Array.from(new Set(publications.map(p => p.researchArea).filter(Boolean)));
+        return uniqueAreas.sort();
     }, [publications]);
 
     // Filter publications
@@ -51,10 +58,11 @@ export default function PublicationsList({ config, publications, embedded = fals
 
             const matchesYear = selectedYear === 'all' || pub.year === selectedYear;
             const matchesType = selectedType === 'all' || pub.type === selectedType;
+            const matchesArea = selectedArea === 'all' || pub.researchArea === selectedArea;
 
-            return matchesSearch && matchesYear && matchesType;
+            return matchesSearch && matchesYear && matchesType && matchesArea;
         });
-    }, [publications, searchQuery, selectedYear, selectedType]);
+    }, [publications, searchQuery, selectedYear, selectedType, selectedArea]);
 
     return (
         <motion.div
@@ -175,6 +183,40 @@ export default function PublicationsList({ config, publications, embedded = fals
                                         ))}
                                     </div>
                                 </div>
+
+                                {/* Research Area Filter */}
+                                <div className="space-y-2">
+                                    <label className="text-sm font-medium text-neutral-700 dark:text-neutral-300 flex items-center">
+                                        <DocumentTextIcon className="h-4 w-4 mr-1" /> Research Area
+                                    </label>
+                                    <div className="flex flex-wrap gap-2">
+                                        <button
+                                            onClick={() => setSelectedArea('all')}
+                                            className={cn(
+                                                "px-3 py-1 text-xs rounded-full transition-colors",
+                                                selectedArea === 'all'
+                                                    ? "bg-accent text-white"
+                                                    : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                                            )}
+                                        >
+                                            All
+                                        </button>
+                                        {areas.map(area => (
+                                            <button
+                                                key={area}
+                                                onClick={() => setSelectedArea(area)}
+                                                className={cn(
+                                                    "px-3 py-1 text-xs rounded-full capitalize transition-colors",
+                                                    selectedArea === area
+                                                        ? "bg-accent text-white"
+                                                        : "bg-white dark:bg-neutral-800 text-neutral-600 hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                                                )}
+                                            >
+                                                {area.replace(/-/g, ' ')}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
                         </motion.div>
                     )}
@@ -230,6 +272,26 @@ export default function PublicationsList({ config, publications, embedded = fals
                                     <p className="text-sm font-medium text-neutral-800 dark:text-neutral-600 mb-3">
                                         {pub.journal || pub.conference} {pub.year}
                                     </p>
+
+                                    {/* Tags */}
+                                    <div className="flex flex-wrap gap-2 mb-3">
+                                        <span className="text-xs font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded border border-blue-100 dark:border-blue-800">
+                                            {pub.year}
+                                        </span>
+                                        <span className="text-xs font-medium text-green-600 dark:text-green-400 bg-green-50 dark:bg-green-900/20 px-2 py-1 rounded border border-green-100 dark:border-green-800 capitalize">
+                                            {pub.type.replace(/-/g, ' ')}
+                                        </span>
+                                        {pub.researchArea && (() => {
+                                            const colors = generateAreaColor(pub.researchArea);
+                                            return (
+                                                <span 
+                                                    className={`text-xs font-medium ${colors.text} ${colors.darkText} ${colors.light} ${colors.dark} px-2 py-1 rounded border ${colors.border} ${colors.darkBorder} capitalize`}
+                                                >
+                                                    {pub.researchArea.replace(/-/g, ' ')}
+                                                </span>
+                                            );
+                                        })()}
+                                    </div>
 
                                     {pub.description && (
                                         <p className="text-sm text-neutral-600 dark:text-neutral-500 mb-4 line-clamp-3">

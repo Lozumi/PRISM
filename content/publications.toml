@@ -1,4 +1,57 @@
 type = "publication"
 title = "Publications"
 description = "A collection of my research work."
-source = "publications.bib"
+
+[[publication]]
+id = "shao2026finetec"
+selected = true
+title = "FineTec: Fine-Grained Action Recognition under Temporal Corruption via Skeleton Decomposition and Sequence Completion"
+authors = ["Dian Shao*", "Ming Shi", "Like Liu$"]
+year = 2026
+pubType = "conference"
+conference = "Proceedings of the 40th AAAI Conference on Artificial Intelligence"
+publisher = "AAAI Press"
+abstract = "Addressing Fine-grained Action Recognition under Temporal Corruption in skeleton sequences, proposed FineTec, a unified framework integrating context-aware sequence completion, skeleton-based spatial decomposition and physics-driven acceleration modeling; constructed the Gym288-skeleton dataset with 38K fine-grained annotations. Achieved 89.1% and 78.1% Top-1 accuracy on Gym99-severe and Gym288-severe."
+description = "A unified framework for fine-grained action recognition under temporal corruption using skeleton decomposition and sequence completion."
+keywords = ["Action Recognition", "Computer Vision", "Skeleton Analysis", "Deep Learning"]
+researcharea = "Action Recognition"
+
+[[publication]]
+id = "shao2025vlnuav"
+title = "Vision-and-Language Navigation for Unmanned Systems: Progress and Perspectives"
+authors = ["Dian Shao*", "Like Liu$", "Zhenyu Xu", "Jiajun Bai"]
+year = 2026
+pubType = "conference"
+conference = "Proceedings of the 5th International Conference on Autonomous Unmanned Systems (ICAUS 2025)"
+note = "EI indexed"
+abstract = "A comprehensive review of Vision-and-Language Navigation methods for unmanned aerial vehicles, discussing current progress, challenges, and future perspectives in the field."
+description = "Survey paper on VLN for unmanned systems, covering progress and future directions."
+keywords = ["Vision-Language Navigation", "UAV", "Unmanned Systems", "Survey"]
+researcharea = "Vision-Language Navigation"
+
+[[publication]]
+id = "shao2025finecog"
+selected = true
+title = "FineCog-Nav: Integrating Fine-grained Cognitive Modules for Zero-shot Multimodal UAV Navigation"
+authors = ["Dian Shao*", "Zhenyu Xu", "Pengcheng Wang", "Like Liu$", "Yuxuan Wang", "Jieqi Shi", "Jinhao Huo"]
+year = 2025
+pubType = "conference"
+conference = "Submitted to CVPR 2026"
+note = "Under review"
+abstract = "Targeted Vision-and-Language Navigation for Unmanned Aerial Vehicles, integrating multiple LLM/VLM-based cognitive modules. Designed prompting strategies to leverage mid-sized models and realised information exchange via interactions among cognitive modules. Achieved performance surpassing existing zero-shot methods on the AerialVLN benchmark."
+description = "Zero-shot UAV navigation framework integrating fine-grained cognitive modules based on LLM/VLM."
+keywords = ["UAV Navigation", "Vision-Language Navigation", "Zero-shot Learning", "Cognitive AI"]
+researcharea = "UAV Navigation"
+
+[[publication]]
+id = "shao2025largemodel"
+title = "Advances and outlook on large model–enabled intelligent unmanned aerial vehicles"
+authors = ["Dian Shao*", "Chengyu Tang", "Mingxing Chang", "Like Liu$", "Yuxuan Wang", "Haihong Li", "Jiajun Bai"]
+year = 2025
+pubType = "journal"
+journal = "Acta Aeronautica et Astronautica Sinica"
+note = "Submitted, EI indexed"
+abstract = "A comprehensive review of large model applications in intelligent UAV systems, discussing advances and future outlook."
+description = "Survey paper on large language model applications in intelligent UAV systems."
+keywords = ["UAV", "Large Language Models", "Unmanned Systems", "AI"]
+researcharea = "Intelligent UAV"

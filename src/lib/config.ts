@@ -11,8 +11,9 @@ export interface SiteConfig {
     };
     author: {
         name: string;
-        title: string;
-        institution: string;
+        category: string;
+        school: string;
+        university: string;
         avatar: string;
     };
     social: {

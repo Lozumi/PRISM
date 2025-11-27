@@ -1,3 +1,4 @@
 type = "text"
 title = "CV"
 source = "cv.md"
+pdf = "/cv/Like_Liu_CV.pdf"

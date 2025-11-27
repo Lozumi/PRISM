@@ -1,5 +1,5 @@
-I am a PhD student at the School of Science, University of Example, advised by [Prof. Advisor One](https://example.com) and [Dr. Advisor Two](https://example.com).
+I am an undergraduate student in the School of Software, Northwestern Polytechnical University (NPU), expected to graduate in June 2026. I am currently working under the guidance of [Prof. Dian Shao](https://scholar.google.com) at the Unmanned Systems Research Institute, NPU.
 
-Prior to this, I obtained a BSc degree with First Class Honours in Natural Science from the University of Example.
+My research focuses on embodied intelligence, UAV vision-language navigation, UAV 3D spatial understanding, and intelligent video understanding. I am passionate about applying AI algorithms to unmanned aerial vehicles and exploring cognitive intelligence in embodied AI systems.
 
-My current research focuses on investigating the mathematical principles of natural philosophy.
+I have published papers at top-tier conferences including AAAI 2026, and have been actively involved in research projects at the National Key Laboratory of Unmanned Aerial Vehicle Technology.

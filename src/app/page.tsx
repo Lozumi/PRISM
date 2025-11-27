@@ -1,6 +1,7 @@
 import { getConfig } from '@/lib/config';
-import { getMarkdownContent, getBibtexContent, getTomlContent, getPageConfig } from '@/lib/content';
+import { getMarkdownContent, getBibtexContent, getTomlContent, getPageConfig, getPublicationsFromToml } from '@/lib/content';
 import { parseBibTeX } from '@/lib/bibtexParser';
+import { Publication } from '@/types/publication';
 import Profile from '@/components/home/Profile';
 import About from '@/components/home/About';
 import SelectedPublications from '@/components/home/SelectedPublications';
@@ -9,7 +10,6 @@ import PublicationsList from '@/components/publications/PublicationsList';
 import TextPage from '@/components/pages/TextPage';
 import CardPage from '@/components/pages/CardPage';
 
-import { Publication } from '@/types/publication';
 import { BasePageConfig, PublicationPageConfig, TextPageConfig, CardPageConfig } from '@/types/page';
 
 // Define types for section config
@@ -49,8 +49,20 @@ export default function Home() {
             content: section.source ? getMarkdownContent(section.source) : ''
           };
         case 'publications': {
-          const bibtex = getBibtexContent('publications.bib');
-          const allPubs = parseBibTeX(bibtex);
+          // Try to read from TOML first
+          let allPubs: Publication[];
+          try {
+            allPubs = getPublicationsFromToml('publications.toml');
+            if (allPubs.length === 0) {
+              // Fallback to BibTeX
+              const bibtex = getBibtexContent('publications.bib');
+              allPubs = parseBibTeX(bibtex);
+            }
+          } catch {
+            // Fallback to BibTeX
+            const bibtex = getBibtexContent('publications.bib');
+            allPubs = parseBibTeX(bibtex);
+          }
           const filteredPubs = section.filter === 'selected'
             ? allPubs.filter(p => p.selected)
             : allPubs;
@@ -92,12 +104,28 @@ export default function Home() {
           } as PageData;
         } else if (pageConfig.type === 'publication') {
           const pubConfig = pageConfig as PublicationPageConfig;
-          const bibtex = getBibtexContent(pubConfig.source);
+          // Try TOML first
+          let publications: Publication[];
+          if (!pubConfig.source || pubConfig.source.endsWith('.toml')) {
+            try {
+              publications = getPublicationsFromToml(pubConfig.source || 'publications.toml');
+              if (publications.length === 0) {
+                const bibtex = getBibtexContent(pubConfig.source || 'publications.bib');
+                publications = parseBibTeX(bibtex);
+              }
+            } catch {
+              const bibtex = getBibtexContent(pubConfig.source || 'publications.bib');
+              publications = parseBibTeX(bibtex);
+            }
+          } else {
+            const bibtex = getBibtexContent(pubConfig.source);
+            publications = parseBibTeX(bibtex);
+          }
           return {
             type: 'publication',
             id: item.target,
             config: pubConfig,
-            publications: parseBibTeX(bibtex)
+            publications
           } as PageData;
         } else if (pageConfig.type === 'text') {
           const textConfig = pageConfig as TextPageConfig;
@@ -162,7 +190,7 @@ export default function Home() {
                         key={section.id}
                         publications={section.publications || []}
                         title={section.title}
-                        enableOnePageMode={true}
+                        enableOnePageMode={enableOnePageMode}
                       />
                     );
                   case 'list':

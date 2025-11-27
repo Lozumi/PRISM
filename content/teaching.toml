@@ -3,8 +3,22 @@ title = "Teaching"
 description = "Courses I have taught or assisted with."
 
 [[items]]
-title = "Example Course"
+title = "C Programming"
 subtitle = "Teaching Assistant"
-date = "2024"
-content = "Description of the course and responsibilities."
-tags = ["Undergraduate", "CS"]
+date = "2024-2025"
+content = "Teaching Assistant for C Programming course at NPU, helping students with programming fundamentals, debugging, and project guidance."
+tags = ["Undergraduate", "Programming"]
+
+[[items]]
+title = "Introduction to AI"
+subtitle = "Teaching Assistant"
+date = "2024-2025"
+content = "Teaching Assistant for Introduction to Artificial Intelligence course, covering machine learning basics, neural networks, and AI applications."
+tags = ["Undergraduate", "AI"]
+
+[[items]]
+title = "Intelligent Robots"
+subtitle = "Teaching Assistant"
+date = "2024-2025"
+content = "Teaching Assistant for Intelligent Robots course, assisting with robotics fundamentals, control systems, and autonomous navigation projects."
+tags = ["Undergraduate", "Robotics"]

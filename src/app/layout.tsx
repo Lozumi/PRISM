@@ -9,11 +9,11 @@ export async function generateMetadata(): Promise<Metadata> {
   const config = getConfig();
   return {
     title: {
-      default: config.site.title,
-      template: `%s | ${config.site.title}`
+      default: `${config.author.name} | Homepage`,
+      template: `${config.author.name} | %s`
     },
     description: config.site.description,
-    keywords: [config.author.name, "PhD", "Research", config.author.institution],
+    keywords: [config.author.name, config.author.category, "Research", config.author.university],
     authors: [{ name: config.author.name }],
     creator: config.author.name,
     publisher: config.author.name,

@@ -21,7 +21,6 @@ export default function SelectedPublications({ publications, title = 'Selected P
                 <h2 className="text-2xl font-serif font-bold text-primary">{title}</h2>
                 <Link
                     href={enableOnePageMode ? "/#publications" : "/publications"}
-                    prefetch={true}
                     className="text-accent hover:text-accent-dark text-sm font-medium transition-all duration-200 rounded hover:bg-accent/10 hover:shadow-sm"
                 >
                     View All →
