@@ -1,4 +1,4 @@
-import { Publication, PublicationType } from '@/types/publication';
+import { Publication, ResearchArea } from '@/types/publication';
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const bibtexParse = require('bibtex-parse-js');
@@ -106,17 +106,17 @@ function generateAreaColor(area: string): {
 }
 
 // Map BibTeX entry types to our publication types
-const typeMapping: Record<string, PublicationType> = {
-  article: 'journal',
-  inproceedings: 'conference',
-  conference: 'conference',
-  incollection: 'book-chapter',
-  book: 'book',
-  phdthesis: 'thesis',
-  mastersthesis: 'thesis',
-  techreport: 'technical-report',
-  unpublished: 'preprint',
-  misc: 'preprint',
+const typeMapping: Record<string, string> = {
+  article: 'Journal',
+  inproceedings: 'Conference',
+  conference: 'Conference',
+  incollection: 'Book Chapter',
+  book: 'Book',
+  phdthesis: 'Thesis',
+  mastersthesis: 'Thesis',
+  techreport: 'Technical Report',
+  unpublished: 'Preprint',
+  misc: 'Preprint',
 };
 
 // Convert month names to numbers
@@ -172,7 +172,7 @@ export function parseBibTeX(bibtexContent: string): Publication[] {
       status: 'published',
       tags: keywords,
       keywords,
-      researchArea: tags.researcharea ? cleanBibTeXString(tags.researcharea) : undefined,
+      researchArea: tags.researcharea ? cleanBibTeXString(tags.researcharea) as ResearchArea : '' as ResearchArea,
       
       // Optional fields
       journal: cleanBibTeXString(tags.journal),

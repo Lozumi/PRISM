@@ -45,10 +45,6 @@ export default function CardPage({ config, embedded = false }: { config: CardPag
         return filteredItems.filter(item => item.category === category);
     };
 
-    const uncategorizedItems = hasCategories 
-        ? filteredItems.filter(item => !item.category || !categories.includes(item.category))
-        : filteredItems;
-
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}

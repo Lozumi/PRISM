@@ -1,30 +1,38 @@
 type = "publication"
-title = "Publications"
-description = "A collection of my research work."
+title = "Publications & Patents"
+description = "See Research Experience for details."
 
 [[publication]]
 id = "shao2026finetec"
 selected = true
 title = "FineTec: Fine-Grained Action Recognition under Temporal Corruption via Skeleton Decomposition and Sequence Completion"
-authors = ["Dian Shao*", "Ming Shi", "Like Liu$"]
+preview = "/publications/FineTec_Poster.jpg"
+aspectRatio = "3/4"
+authors = ["Dian Shao", "Mingfei Shi", "Like Liu$"]
 year = 2026
-pubType = "conference"
-conference = "Proceedings of the 40th AAAI Conference on Artificial Intelligence"
+pubType = "Conference"
+conference = "Proceedings of the 40th AAAI Conference on Artificial Intelligence (AAAI 2026)"
 publisher = "AAAI Press"
-abstract = "Addressing Fine-grained Action Recognition under Temporal Corruption in skeleton sequences, proposed FineTec, a unified framework integrating context-aware sequence completion, skeleton-based spatial decomposition and physics-driven acceleration modeling; constructed the Gym288-skeleton dataset with 38K fine-grained annotations. Achieved 89.1% and 78.1% Top-1 accuracy on Gym99-severe and Gym288-severe."
-description = "A unified framework for fine-grained action recognition under temporal corruption using skeleton decomposition and sequence completion."
-keywords = ["Action Recognition", "Computer Vision", "Skeleton Analysis", "Deep Learning"]
+url = "https://smartdianlab.github.io/projects-FineTec/"
+code = "https://github.com/SmartDianLab/FineTec"
+dataset = "https://github.com/SmartDianLab/FineTec"
+abstract = "Recognizing fine-grained actions from temporally corrupted skeleton sequences remains a significant challenge, particularly in real-world scenarios where online pose estimation often yields substantial missing data. Existing methods often struggle to accurately recover temporal dynamics and fine-grained spatial structures, resulting in the loss of subtle motion cues crucial for distinguishing similar actions. To address this, we propose FineTec, a unified framework for Fine-grained action recognition under Te mporal C orruption. FineTec first restores a base skeleton sequence from corrupted input using context-aware completion with diverse temporal masking. Next, a skeleton-based spatial decomposition module partitions the skeleton into five semantic regions, further divides them into dynamic and static subgroups based on motion variance, and generates two augmented skeleton sequences via targeted perturbation. These, along with the base sequence, are then processed by a physics-driven estimation module, which utilizes Lagrangian dynamics to estimate joint accelerations. Finally, both the fused skeleton position sequence and the fused acceleration sequence are jointly fed into a GCN-based action recognition head. Extensive experiments on both coarse-grained (NTU-60, NTU-120) and fine-grained (Gym99, Gym288) benchmarks show that FineTec significantly outperforms previous methods under various levels of temporal corruption. Specifically, FineTec achieves top-1 accuracies of 89.1% and 78.1% on the challenging Gym99-severe and Gym288-severe settings, respectively, demonstrating its robustness and generalizability."
+description = "A unified framework for fine-grained action recognition under temporal corruption using context-aware sequence completion, skeleton-based spatial decomposition and physics-driven acceleration modeling. Also a new dataset Gym288-skeleton extended from FineGym, for more fine-grained evaluation."
+keywords = ["Action Recognition", "Fine-grained Analysis", "Skeleton-based Recognition", "Computer Vision"]
 researcharea = "Action Recognition"
 
 [[publication]]
 id = "shao2025vlnuav"
+selected = true
 title = "Vision-and-Language Navigation for Unmanned Systems: Progress and Perspectives"
-authors = ["Dian Shao*", "Like Liu$", "Zhenyu Xu", "Jiajun Bai"]
+preview = "/publications/ICAUS2025_0410_Poster.jpg"
+aspectRatio = "3/4"
+authors = ["Dian Shao", "Like Liu$", "Zhengzheng Xu", "Junqiang Bai"]
 year = 2026
-pubType = "conference"
+pubType = "Conference"
 conference = "Proceedings of the 5th International Conference on Autonomous Unmanned Systems (ICAUS 2025)"
 note = "EI indexed"
-abstract = "A comprehensive review of Vision-and-Language Navigation methods for unmanned aerial vehicles, discussing current progress, challenges, and future perspectives in the field."
+abstract = "Vision-and-Language Navigation has emerged as a key capability for next-generation unmanned systems, enabling embodied agents to interpret natural language instructions and autonomously operate in complex, real-world environments. This paper systematically reviews the evolution of VLN, from early indoor, graph-based settings to recent advances in outdoor and aerial scenarios. We highlight the pivotal role of foundation models, including large-scale vision–language models (VLMs) and large language models (LLMs), in enhancing open-vocabulary perception, compositional reasoning, and generalization, thereby enabling robust zero-shot navigation and collaborative multi-agent systems. The review covers major benchmarks, representative methodologies, and state-of-the-art systems, with a particular focus on the challenges and opportunities arising from dynamic urban and aerial environments. Finally, we discuss recent key innovations and persistent challenges in the field, and outline future directions for the development of intelligent, language-guided autonomous agents."
 description = "Survey paper on VLN for unmanned systems, covering progress and future directions."
 keywords = ["Vision-Language Navigation", "UAV", "Unmanned Systems", "Survey"]
 researcharea = "Vision-Language Navigation"
@@ -33,25 +41,112 @@ researcharea = "Vision-Language Navigation"
 id = "shao2025finecog"
 selected = true
 title = "FineCog-Nav: Integrating Fine-grained Cognitive Modules for Zero-shot Multimodal UAV Navigation"
-authors = ["Dian Shao*", "Zhenyu Xu", "Pengcheng Wang", "Like Liu$", "Yuxuan Wang", "Jieqi Shi", "Jinhao Huo"]
+authors = ["Dian Shao", "Zhengzheng Xu", "Peiyang Wang", "Like Liu$", "Yule Wang", "Jieqi Shi", "Jing Huo"]
 year = 2025
-pubType = "conference"
+pubType = "Conference"
 conference = "Submitted to CVPR 2026"
 note = "Under review"
-abstract = "Targeted Vision-and-Language Navigation for Unmanned Aerial Vehicles, integrating multiple LLM/VLM-based cognitive modules. Designed prompting strategies to leverage mid-sized models and realised information exchange via interactions among cognitive modules. Achieved performance surpassing existing zero-shot methods on the AerialVLN benchmark."
+abstract = "Vision-Language Navigation (VLN) for Unmanned Aerial Vehicles (UAVs) involves navigating complex 3D environments from an egocentric perspective, often guided by ambiguous, multi-step instructions and requiring long-horizon planning. Existing zero-shot approaches struggle to address these challenges, as they typically rely on large-scale base models, generic prompt designs, and simplistic modular assembly. In this work, we present FineCog-Nav, a top-down framework that simulates human cognition by explicitly modeling core functions as specialized modules, including perception, attention, memory, reasoning, imagination, planning, decision-making, etc. Each module is powered by a moderate-sized foundation model and operates under carefully designed prompts that specify cognitive and functional roles, aerial navigation tasks, operational rules, and structured input-output formats. This design enables effective inter-module collaboration and ensures a transparent, interpretable navigation process. To support systematic and detailed evaluation, we construct AerialVLN-Fine, a curated dataset of 300 filtered trajectories from AerialVLN, featuring sentence-level alignment between instructions and trajectory segments, with all ambiguous instructions clarified for visual endpoints and landmark references. Comprehensive experiments demonstrate FineCog-Nav’s superiority over other zero-shot baselines, showing better instruction adherence, robust long-horizon planning, and generalization to unseen environments, highlighting the value of cognitive modularity and fine-grained prompt engineering for aerial navigation."
 description = "Zero-shot UAV navigation framework integrating fine-grained cognitive modules based on LLM/VLM."
 keywords = ["UAV Navigation", "Vision-Language Navigation", "Zero-shot Learning", "Cognitive AI"]
 researcharea = "UAV Navigation"
 
 [[publication]]
 id = "shao2025largemodel"
-title = "Advances and outlook on large model–enabled intelligent unmanned aerial vehicles"
-authors = ["Dian Shao*", "Chengyu Tang", "Mingxing Chang", "Like Liu$", "Yuxuan Wang", "Haihong Li", "Jiajun Bai"]
+title = "Intelligent UAVs Empowered by Large Models: Progress, Applications and Perspectives"
+authors = ["Dian Shao", "Chu Tang", "Min Chang", "Like Liu$", "Yule Wang", "Hao Li", "Junqiang Bai"]
 year = 2025
-pubType = "journal"
-journal = "Acta Aeronautica et Astronautica Sinica"
-note = "Submitted, EI indexed"
+pubType = "Journal"
+journal = "Submitted to Acta Aeronautica et Astronautica Sinica"
+note = "Submitted"
 abstract = "A comprehensive review of large model applications in intelligent UAV systems, discussing advances and future outlook."
 description = "Survey paper on large language model applications in intelligent UAV systems."
 keywords = ["UAV", "Large Language Models", "Unmanned Systems", "AI"]
 researcharea = "Intelligent UAV"
+
+[[publication]]
+id = "patent2025finetec"
+preview = "/publications/patent_1.png"
+title = "Fine-grained Human Motion Generation Method Based on Physical Laws and Skeleton Guidance"
+authors = ["Dian Shao", "Mingfei Shi", "Junqiang Bai", "Shengda Xu", "Haodong Chen", "Yongle Huang", "Like Liu$"]
+year = 2025
+pubType = "Patent"
+patentNumber = "Granted, No. ZL202510575275.6"
+description = "Invention patent for fine-grained human motion generation using physical laws and skeleton guidance."
+researcharea = "Action Recognition"
+
+[[publication]]
+id = "patent2025humanoid"
+title = "Humanoid Robot Navigation Method Using a Hybrid Fuzzy Neural Network and Adaptive PID Control Algorithm"
+authors = ["Like Liu$", "Boyang Sun", "Liang He*"]
+year = 2025
+pubType = "Patent"
+patentNumber = "Published, No. CN120385341A"
+description = "Humanoid robot navigation method combining fuzzy neural network and adaptive PID control."
+researcharea = "Robotics"
+
+[[publication]]
+id = "patent2025vlnuav"
+title = "Zero-finetuning Vision-Language Navigation Method for UAVs via Integration of Fine-grained Cognitive Modules"
+authors = ["Dian Shao", "Zhengzheng Xu", "Peiyang Wang", "Like Liu$", "Jieqi Shi", "Yule Wang", "Jing Huo"]
+year = 2025
+pubType = "Patent"
+patentNumber = "Pending"
+description = "Patent for zero-finetuning UAV vision-language navigation using cognitive modules."
+researcharea = "UAV Navigation"
+
+[[publication]]
+id = "patent2025skeleton"
+title = "Fine-grained Action Recognition under Temporally Corrupted Sequences via Skeleton Decomposition and Sequence Completion"
+authors = ["Dian Shao", "Mingfei Shi", "Like Liu$"]
+year = 2025
+pubType = "Patent"
+patentNumber = "Pending"
+description = "Patent for fine-grained action recognition using skeleton decomposition."
+researcharea = "Action Recognition"
+
+[[publication]]
+id = "book2026wholebody"
+title = "Whole-Body Control for Multi-Contact Balancing of Humanoid Robots: Design and Experiments"
+preview = "/publications/Whole_Body_Control_Cover.jpg"
+aspectRatio = "3/4"
+authors = ["Bernd Henze (Author)", "Liang He (Translator)", "Yan Ma (Translator)", "Like Liu$ (Translator)", "Yuting Shi (Translator)"]
+year = 2026
+pubType = "Book"
+publisher = "National Defense Industry Press, Beijing"
+abstract = "This work aims at providing algorithms for balance control of legged, torque-controlled humanoid robots. A humanoid robot normally uses the feet for locomotion. This paradigm is extended by addressing the challenge of multi-contact balancing, which allows a humanoid robot to exploit an arbitrary number of contacts to support itself. Using multiple contacts increases the size of the support polygon, which in turn leads to an increased robustness of the stance and to an increased kinematic workspace of the robot. Both are important features for facilitating a transition of humanoid robots from research labs to real-world applications, where they are confronted with multiple challenging scenarios, such as climbing stairs and ladders, traversing debris, handling heavy loads, or working in confined spaces. The distribution of forces and torques among the multiple contacts is a challenging aspect of the problem, which arises from the closed kinematic chain given by the robot and its environment.\n\nThe developed framework also addresses the challenge of whole-body control by allowing a humanoid robot not only to maintain balance but also to interact with its environment, as, e.g. by carrying or manipulating objects. Of course, the forces and torques arising from the interaction task must be considered by the balancing and/or support task to avoid falling.\n\nThe whole-body control framework is generalized by combining the techniques for multi-contact balancing with multi-objective control, which allows for a more generic task definition. Kinematic and dynamic conflicts between the tasks are resolved via a prioritization. This generalization also allows the use of support contacts not only at the end-effectors (hands and feet) but at arbitrary locations on the body of the robot, such as the knees, pelvis, backpack, shoulders, or the elbows. This ability is essential for operating a humanoid robot in confined spaces, where there might be not enough space to completely 'unfold' the limbs to rely on hands and feet only.\n\nThe developed control framework implements a compliant balancing behavior in order to ensure safety in case of accidental collisions between robot and environment or between robot and human. Furthermore, the framework employs passivity-based methods to achieve robustness with respect to external disturbances.\n\nThe performance and versatility of the developed whole-body control framework was demonstrated in numerous experiments and in the context of the EU-project COMANOID, which addressed the challenge of introducing humanoid robots into aircraft manufacturing."
+description = "Translated monograph on whole-body control for humanoid robots."
+researcharea = "Robotics"
+
+[[publication]]
+id = "software2023pathplanning"
+preview = "/publications/software_1.png"
+title = "Time-window Constrained Multi-node Path Planning System"
+authors = ["Like Liu$", "Haoxuan Li"]
+year = 2023
+pubType = "Software Copyright"
+patentNumber = "No. 12125321"
+description = "Software copyright for time-window constrained multi-node path planning system."
+researcharea = "Path Planning"
+
+[[publication]]
+id = "software2024uavlogistics"
+preview = "/publications/software_2.png"
+title = "UAV-enabled Low-altitude Logistics Planning System"
+authors = ["Yutong Li", "Like Liu$", "Haoxuan Li"]
+year = 2024
+pubType = "Software Copyright"
+patentNumber = "No. 13950938"
+description = "Software copyright for UAV-enabled low-altitude logistics planning system."
+researcharea = "UAV Navigation"
+
+[[publication]]
+id = "software2025gtd"
+preview = "/publications/software_3.png"
+title = "GTD-based Task Assignment and Management System"
+authors = ["Like Liu$", "Shuchang Zhang", "Zhenguo Li", "et al."]
+year = 2025
+pubType = "Software Copyright"
+patentNumber = "No. 15861786"
+description = "Software copyright for GTD-based task assignment and management system."
+researcharea = "Software Engineering"

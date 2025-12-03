@@ -1,12 +1,20 @@
 type = "card"
-title = "Awards"
+title = "Awards & Honors"
 description = "Honors and awards I have received."
-categories = ["Honors & Titles", "Competition Awards"]
+categories = ["Honors", "Competition Awards"]
+
+[[items]]
+title = "MCM/ICM"
+subtitle = "Honourable Mention"
+date = "2024-05, 2025-05"
+content = "Honourable Mention in Mathematical Contest in Modeling / Interdisciplinary Contest in Modeling."
+tags = ["International", "Mathematics"]
+category = "Competition Awards"
 
 [[items]]
 title = "NECCS 2023 — First Prize"
 subtitle = "National English Competition for College Students"
-date = "2023"
+date = "2023-06"
 content = "First Prize in the National English Competition for College Students."
 tags = ["National", "English"]
 category = "Competition Awards"
@@ -14,7 +22,7 @@ category = "Competition Awards"
 [[items]]
 title = "Global Campus AI Algorithm Elite Challenge"
 subtitle = "Finals — First Prize"
-date = "2024"
+date = "2024-11"
 content = "First Prize in the Global Campus AI Algorithm Elite Challenge Finals."
 tags = ["International", "AI", "Competition"]
 category = "Competition Awards"
@@ -22,7 +30,7 @@ category = "Competition Awards"
 [[items]]
 title = "National Robot Championship"
 subtitle = "Finals — First Prize"
-date = "2024"
+date = "2025-03"
 content = "First Prize in the National Robot Championship & Humanoid Robot Olympiad Finals."
 tags = ["National", "Robotics"]
 category = "Competition Awards"
@@ -30,15 +38,23 @@ category = "Competition Awards"
 [[items]]
 title = "Challenge Cup 2024"
 subtitle = "Revealing-the-List Special Track — Second Prize"
-date = "2024"
+date = "2024-11"
 content = "Second Prize in the Challenge Cup 2024 Revealing-the-List Special Track Finals."
 tags = ["National", "Innovation"]
 category = "Competition Awards"
 
 [[items]]
+title = "International Advanced Robotics & Simulation Tech Competition"
+subtitle = "Finals — Second Prize"
+date = "2024-11"
+content = "Second Prize in International Advanced Robotics & Simulation Tech Competition Finals."
+tags = ["International", "Robotics"]
+category = "Competition Awards"
+
+[[items]]
 title = "FLTRP • Guocai Cup (Interpreting)"
 subtitle = "Shaanxi Province — Gold Prize"
-date = "2023"
+date = "2023-11"
 content = "Gold Prize in FLTRP • Guocai Cup Interpreting Competition, Shaanxi Province."
 tags = ["Provincial", "English"]
 category = "Competition Awards"
@@ -46,7 +62,7 @@ category = "Competition Awards"
 [[items]]
 title = "China International College Students' Innovation Competition"
 subtitle = "Shaanxi Province — Gold Prize"
-date = "2024"
+date = "2024-09"
 content = "Gold Prize in China International College Students' Innovation Competition, Shaanxi Province."
 tags = ["Provincial", "Innovation"]
 category = "Competition Awards"
@@ -54,47 +70,55 @@ category = "Competition Awards"
 [[items]]
 title = "National Mathematical Modelling Contest"
 subtitle = "Shaanxi Province — First Prize"
-date = "2024"
+date = "2024-11"
 content = "First Prize in National Mathematical Modelling Contest, Shaanxi Province."
 tags = ["Provincial", "Mathematics"]
 category = "Competition Awards"
 
 [[items]]
+title = "National 3D Digital Innovation Design Competition"
+subtitle = "Shaanxi Province — First Prize"
+date = "2024-11"
+content = "First Prize in National 3D Digital Innovation Design Competition, Shaanxi Province."
+tags = ["Provincial", "Design"]
+category = "Competition Awards"
+
+[[items]]
 title = "NPU First-class Scholarship"
 subtitle = "Top 5%"
-date = "2023, 2024"
+date = "2023-11, 2024-11"
 content = "Awarded NPU First-class Scholarship for outstanding academic performance (Top 5%)."
 tags = ["Scholarship", "Academic"]
-category = "Honors & Titles"
+category = "Honors"
 
 [[items]]
 title = "Multi-div. Vision Scholarship"
 subtitle = "1 per school"
-date = "2024"
+date = "2023-12"
 content = "Recipient of the prestigious Multi-div. Vision Scholarship (1 per school)."
 tags = ["Scholarship", "Honor"]
-category = "Honors & Titles"
+category = "Honors"
 
 [[items]]
 title = "Ningbo Future Star Scholarship"
 subtitle = "1 per school"
-date = "2025"
+date = "2024-11"
 content = "Recipient of the prestigious Ningbo Future Star Scholarship (1 per school)."
 tags = ["Scholarship", "Honor"]
-category = "Honors & Titles"
+category = "Honors"
 
 [[items]]
 title = "Provincial Outstanding Volunteer"
 subtitle = "Shaanxi Province"
-date = "2024, 2025"
+date = "2024-03, 2024-08"
 content = "Awarded Provincial Outstanding Volunteer title for exceptional community service."
 tags = ["Honor", "Service"]
-category = "Honors & Titles"
+category = "Honors"
 
 [[items]]
 title = "NPU Outstanding Student"
 subtitle = "Northwestern Polytechnical University"
-date = "2023, 2024"
+date = "2023-11, 2024-11"
 content = "Recognized as NPU Outstanding Student for academic excellence and comprehensive development."
 tags = ["Honor", "Academic"]
-category = "Honors & Titles"
+category = "Honors"

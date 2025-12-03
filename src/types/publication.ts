@@ -16,6 +16,8 @@ export interface Publication {
   abstract?: string;
   journal?: string;
   conference?: string;
+  publisher?: string;
+  patentNumber?: string;
   volume?: string;
   issue?: string;
   pages?: string;
@@ -27,11 +29,12 @@ export interface Publication {
   pmid?: string;
   url?: string;
   code?: string;
+  dataset?: string;
   pdfUrl?: string;
   tags: string[];
   keywords?: string[];
-  type: PublicationType;
-  status: PublicationStatus;
+  type: string;
+  status?: string;
   citations?: number;
   impactFactor?: number;
   quartile?: 'Q1' | 'Q2' | 'Q3' | 'Q4';
@@ -45,26 +48,8 @@ export interface Publication {
   summary?: string;
   researchArea: ResearchArea;
   description?: string;
+  aspectRatio?: string;
 }
-
-export type PublicationType =
-  | 'journal'
-  | 'conference'
-  | 'workshop'
-  | 'book-chapter'
-  | 'book'
-  | 'thesis'
-  | 'preprint'
-  | 'patent'
-  | 'technical-report';
-
-export type PublicationStatus =
-  | 'published'
-  | 'accepted'
-  | 'under-review'
-  | 'submitted'
-  | 'in-preparation'
-  | 'draft';
 
 // Research area can be any string, allowing for custom areas
 export type ResearchArea = string;

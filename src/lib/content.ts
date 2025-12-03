@@ -55,14 +55,14 @@ function parseAuthor(authorStr: string): Author {
 
 // Get publications from TOML with proper type conversion
 export function getPublicationsFromToml(filename: string): Publication[] {
-    const tomlData = getTomlContent<{ publication?: any[] }>(filename);
+    const tomlData = getTomlContent<{ publication?: Record<string, unknown>[] }>(filename);
     
     if (!tomlData?.publication) {
         return [];
     }
     
-    return tomlData.publication.map((pub: any) => {
-        const result = {
+    return tomlData.publication.map((pub: Record<string, unknown>) => {
+        const result: Publication = {
             ...pub,
             type: pub.pubType || pub.type, // Map pubType to type
             researchArea: pub.researcharea || pub.researchArea, // Map researcharea to researchArea
@@ -71,7 +71,7 @@ export function getPublicationsFromToml(filename: string): Publication[] {
                     typeof author === 'string' ? parseAuthor(author) : author
                   )
                 : []
-        };
+        } as Publication;
         return result;
     });
 }

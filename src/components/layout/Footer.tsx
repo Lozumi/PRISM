@@ -12,11 +12,26 @@ export default function Footer({ lastUpdated }: FooterProps) {
           <p className="text-xs text-neutral-500">
             Last updated: {lastUpdated || new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
           </p>
-          <p className="text-xs text-neutral-500 flex items-center">
-            <a href="https://github.com/xyjoey/PRISM" target="_blank" rel="noopener noreferrer">
-              Built with PRISM
+          <p className="text-xs text-neutral-500 flex items-center gap-1">
+            <span>Based on</span>
+            <a 
+              href="https://github.com/xyjoey/PRISM" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-accent transition-colors"
+            >
+              PRISM
             </a>
-            <span className="ml-2">🚀</span>
+            <span>•</span>
+            <a 
+              href="https://github.com/xyjoey/PRISM" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-accent transition-colors"
+            >
+              Source Code
+            </a>
+            <span className="ml-1">🚀</span>
           </p>
         </div>
       </div>

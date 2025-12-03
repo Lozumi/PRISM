@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getPageConfig, getMarkdownContent, getBibtexContent, getTomlContent, getPublicationsFromToml } from '@/lib/content';
+import { getPageConfig, getMarkdownContent, getBibtexContent, getPublicationsFromToml } from '@/lib/content';
 import { getConfig } from '@/lib/config';
 import { parseBibTeX } from '@/lib/bibtexParser';
 import PublicationsList from '@/components/publications/PublicationsList';
@@ -11,7 +11,6 @@ import {
     TextPageConfig,
     CardPageConfig
 } from '@/types/page';
-import { Publication } from '@/types/publication';
 
 import { Metadata } from 'next';
 

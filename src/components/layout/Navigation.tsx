@@ -139,15 +139,8 @@ export default function Navigation({ items, siteTitle, enableOnePageMode }: Navi
                           >
                             <span className="relative z-10">{item.title}</span>
                             {isActive && (
-                              <motion.div
-                                layoutId="activeTab"
+                              <div
                                 className="absolute inset-0 bg-accent/10 rounded-lg"
-                                initial={false}
-                                transition={{
-                                  type: 'spring',
-                                  stiffness: 500,
-                                  damping: 30
-                                }}
                               />
                             )}
                           </Link>

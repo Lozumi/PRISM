@@ -14,16 +14,16 @@ avatar = "/bio.jpg"
 [social]
 # Contact information (leave blank or delete to hide)
 
-email = "nico.liu@mail.nwpu.edu.cn"
+email = "like.liu@mail.nwpu.edu.cn"
 location = "Xi'an, China"
-location_url = "https://maps.google.com/?q=Xi'an,China"
+location_url = "https://j.map.baidu.com/25/ish"
 location_details = [
   "Northwestern Polytechnical University,",
   "Xi'an, Shaanxi, China"
 ]
-google_scholar = "https://scholar.google.com"
+google_scholar = ""
 orcid = ""
-github = "https://github.com"
+github = "https://github.com/Lozumi"
 linkedin = ""
 
 [features]
