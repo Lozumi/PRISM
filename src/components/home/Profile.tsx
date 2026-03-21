@@ -7,7 +7,8 @@ import {
     EnvelopeIcon,
     AcademicCapIcon,
     HeartIcon,
-    MapPinIcon
+    MapPinIcon,
+    DocumentArrowDownIcon
 } from '@heroicons/react/24/outline';
 import { MapPinIcon as MapPinSolidIcon, EnvelopeIcon as EnvelopeSolidIcon } from '@heroicons/react/24/solid';
 import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid';
@@ -315,6 +316,17 @@ export default function Profile({ author, social, features, researchInterests }:
                     </ul>
                 </div>
             )}
+
+            <div className="flex justify-center mb-6">
+                <a
+                    href="/cv/Like_Liu_CV.pdf"
+                    download
+                    className="inline-flex items-center space-x-2 px-4 py-2 rounded-lg font-medium text-sm bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-accent hover:text-white transition-all duration-200"
+                >
+                    <DocumentArrowDownIcon className="h-4 w-4" />
+                    <span>Download CV</span>
+                </a>
+            </div>
 
             {/* Like Button */}
             {features.enable_likes && (

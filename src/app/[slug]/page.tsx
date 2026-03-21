@@ -25,6 +25,9 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
+    if (slug === 'cv') {
+        return {};
+    }
     const pageConfig = getPageConfig(slug) as BasePageConfig | null;
 
     if (!pageConfig) {
@@ -39,6 +42,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function DynamicPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
+    if (slug === 'cv') {
+        notFound();
+    }
     const pageConfig = getPageConfig(slug) as BasePageConfig | null;
 
     if (!pageConfig) {

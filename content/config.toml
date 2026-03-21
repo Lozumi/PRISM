@@ -56,9 +56,3 @@ title = "Practices"
 type = "page"
 target = "practices"
 href = "/practices"
-
-[[navigation]]
-title = "CV"
-type = "page"
-target = "cv"
-href = "/cv"

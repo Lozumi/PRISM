@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
@@ -98,6 +99,36 @@ export default function RootLayout({
         />
       </head>
       <body className={`font-sans antialiased`}>
+        <Script
+          id="LA_COLLECT"
+          charSet="UTF-8"
+          src="//sdk.51.la/js-sdk-pro.min.js"
+          strategy="afterInteractive"
+        />
+        <Script id="la-init" strategy="afterInteractive">
+          {`
+            (function () {
+              var retries = 0;
+              var maxRetries = 30;
+              var timer = setInterval(function () {
+                if (window.LA && typeof window.LA.init === 'function') {
+                  clearInterval(timer);
+                  window.LA.init({
+                    id: "L8XSil3RfNx2OyHT",
+                    ck: "L8XSil3RfNx2OyHT",
+                    autoTrack: true,
+                    hashMode: true
+                  });
+                  return;
+                }
+                retries += 1;
+                if (retries >= maxRetries) {
+                  clearInterval(timer);
+                }
+              }, 200);
+            })();
+          `}
+        </Script>
         <ThemeProvider>
           <Navigation
             items={config.navigation}

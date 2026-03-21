@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Publication } from '@/types/publication';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 
@@ -43,17 +44,19 @@ export default function SelectedPublications({ publications, title = 'Selected P
                         <div className="flex gap-4">
                             {pub.preview && (
                                 <div 
-                                    className="flex-shrink-0 bg-neutral-100 dark:bg-neutral-700 rounded overflow-hidden border border-neutral-200 dark:border-neutral-600 cursor-pointer hover:opacity-80 transition-opacity"
+                                    className="flex-shrink-0 bg-neutral-100 dark:bg-neutral-700 rounded overflow-hidden border border-neutral-200 dark:border-neutral-600 cursor-pointer hover:opacity-80 transition-opacity relative"
                                     style={{
                                         width: '128px',
                                         aspectRatio: pub.aspectRatio || '3/4'
                                     }}
                                     onClick={() => setLightboxImage(pub.preview!)}
                                 >
-                                    <img 
+                                    <Image 
                                         src={pub.preview} 
                                         alt={pub.title}
-                                        className="w-full h-full object-contain"
+                                        fill
+                                        className="object-contain"
+                                        sizes="128px"
                                     />
                                 </div>
                             )}

@@ -3,7 +3,7 @@
 **Northwestern Polytechnical University (NPU)**, Xi'an, China  
 BEng in Software Engineering, *Sep 2022 – Jun 2026*
 
-- **Overall Comprehensive Assessment:** 99.9/100 (Rank 1/257)
+- **Overall Comprehensive Assessment:** 96.9/100 (Rank 1/257)
 - **Academic Average:** 89.6/100
 - **English Proficiency:** CET-6 616; IELTS 7.5; First Prize, National English Competition for College Students (NECCS)
 - **Research Mentor:** Prof. Dian Shao, Unmanned Systems Research Institute, NPU
@@ -52,37 +52,37 @@ Supervisor: Prof. Dian Shao (NPU)
 
 ## Publications
 
-1. **Shao, D., Shi, M., Liu, L.** (2026). FineTec: Fine-Grained Action Recognition under Temporal Corruption via Skeleton Decomposition and Sequence Completion. *Proceedings of the 40th AAAI Conference on Artificial Intelligence (AAAI 2026)*.
+1. **Dian Shao, Mingfei Shi, Like Liu.** (2026). FineTec: Fine-Grained Action Recognition under Temporal Corruption via Skeleton Decomposition and Sequence Completion. *Proceedings of the 40th AAAI Conference on Artificial Intelligence (AAAI 2026)*.
 
-2. **Shao, D., Liu, L., Xu, Z., Bai, J.** (2026). Vision-and-Language Navigation for Unmanned Systems: Progress and Perspectives. *Proceedings of the 5th International Conference on Autonomous Unmanned Systems (ICAUS 2025)* (EI indexed).
+2. **Dian Shao, Like Liu, Zhengzheng Xu, Junqiang Bai.** (2026). Vision-and-Language Navigation for Unmanned Systems: Progress and Perspectives. *Proceedings of the 5th International Conference on Autonomous Unmanned Systems (ICAUS 2025)* (EI indexed).
 
-3. **Shao, D., Xu, Z., Wang, P., Liu, L., Wang, Y., Shi, J., Huo, J.** (2025). FineCog-Nav: Integrating Fine-grained Cognitive Modules for Zero-shot Multimodal UAV Navigation. *Submitted to CVPR 2026*.
+3. **Dian Shao, Zhengzheng Xu, Peiyang Wang, Like Liu, Yule Wang, Jieqi Shi, Jing Huo.** (2025). FineCog-Nav: Integrating Fine-grained Cognitive Modules for Zero-shot Multimodal UAV Navigation. *Submitted to CVPR 2026*.
 
-4. **Shao, D., Tang, C., Chang, M., Liu, L., Wang, Y., Li, H., Bai, J.** (2025). Advances and outlook on large model–enabled intelligent unmanned aerial vehicles. *Submitted to Acta Aeronautica et Astronautica Sinica*.
+4. **Dian Shao, Chu Tang, Min Chang, Like Liu, Yule Wang, Hao Li, Junqiang Bai.** (2025). Advances and outlook on large model–enabled intelligent unmanned aerial vehicles. *Submitted to Acta Aeronautica et Astronautica Sinica*.
 
 ## Patents
 
 ### Invention Patents
 
-1. **Shao, D., Shi, M., Bai, J., Xu, S., Chen, H., Huang, Y., Liu, L.** (2025). Fine-grained human motion generation method based on physical laws and skeleton guidance. *Granted, No. ZL202510575275.6*.
+1. **Dian Shao, Mingfei Shi, Junqiang Bai, Shengda Xu, Haodong Chen, Yongle Huang, Like Liu.** (2025). Fine-grained human motion generation method based on physical laws and skeleton guidance. *Granted, No. ZL202510575275.6*.
 
-2. **Liu, L., Sun, B., He, L.** (2025). Humanoid robot navigation method using a hybrid fuzzy neural network and adaptive PID control algorithm. *Published, No. CN120385341A*.
+2. **Like Liu, Boyang Sun, Liang He.** (2025). Humanoid robot navigation method using a hybrid fuzzy neural network and adaptive PID control algorithm. *Published, No. CN120385341A*.
 
-3. **Shao, D., Xu, Z., Wang, P., Liu, L., Shi, J., Wang, Y., Huo, J.** (2025). Zero-finetuning vision-language navigation method for UAVs via integration of fine-grained cognitive modules. *Application pending*.
+3. **Dian Shao, Zhengzheng Xu, Peiyang Wang, Like Liu, Jieqi Shi, Yule Wang, Jing Huo.** (2025). Zero-finetuning vision-language navigation method for UAVs via integration of fine-grained cognitive modules. *Application pending*.
 
-4. **Shao, D., Shi, M., Liu, L.** (2025). Fine-grained action recognition under temporally corrupted sequences via skeleton decomposition and sequence completion. *Application pending*.
+4. **Dian Shao, Mingfei Shi, Like Liu.** (2025). Fine-grained action recognition under temporally corrupted sequences via skeleton decomposition and sequence completion. *Application pending*.
 
 ### Software Copyrights
 
-1. **Liu, L., Li, H.** (2023). Time-window constrained multi-node path planning system. *No. 12125321*.
+1. **Like Liu, Haoxuan Li.** (2023). Time-window constrained multi-node path planning system. *No. 12125321*.
 
-2. **Li, Y., Liu, L., Li, H.** (2024). UAV-enabled low-altitude logistics planning system. *No. 13950938*.
+2. **Yutong Li, Like Liu, Haoxuan Li.** (2024). UAV-enabled low-altitude logistics planning system. *No. 13950938*.
 
-3. **Liu, L., Zhang, S., Li, Z., et al.** (2025). GTD-based task assignment and management system. *No. 15861786*.
+3. **Like Liu, Shuchang Zhang, Zhenguo Li, et al.** (2025). GTD-based task assignment and management system. *No. 15861786*.
 
 ## Translated Monograph
 
-1. **Henze, B.** (2026). *Whole-Body Control for Multi-Contact Balancing of Humanoid Robots: Design and Experiments* (He, L., Ma, Y., **Liu, L.**, & Shi, Y., Trans.). Beijing: National Defense Industry Press.
+1. **Henze, B.** (2026). *Whole-Body Control for Multi-Contact Balancing of Humanoid Robots: Design and Experiments* (**Liang He, Yan Ma, Like Liu, Yuting Shi**, Trans.). Beijing: National Defense Industry Press.
 
 ## Honors & Awards
 
@@ -139,10 +139,8 @@ Supervisor: Prof. Dian Shao (NPU)
 
 ## Skills
 
-- **Programming:** Python, C++, JavaScript, Vue.js, LaTeX
-- **AI/ML Frameworks:** PyTorch, TensorFlow, Hugging Face Transformers
-- **Computer Vision:** OpenCV, Computer Vision, Video Understanding
-- **Robotics:** UAV Control, ROS, Navigation Systems
+- **Programming:** Python, C++, Vue.js, Unity, ROS
+- **AI/ML Frameworks:** PyTorch, LLaMA Factory
 - **Languages:** English (IELTS 7.5, CET-6 616), Chinese (Native)
 
 
