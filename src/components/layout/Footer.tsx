@@ -15,7 +15,7 @@ export default function Footer({ lastUpdated }: FooterProps) {
           <p className="text-xs text-neutral-500 flex items-center gap-1">
             <span>Based on</span>
             <a 
-              href="https://github.com/xyjoey/PRISM" 
+              href="https://github.com/Lozumi/PRISM" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-accent transition-colors"
@@ -24,7 +24,7 @@ export default function Footer({ lastUpdated }: FooterProps) {
             </a>
             <span>•</span>
             <a 
-              href="https://github.com/xyjoey/PRISM" 
+              href="https://github.com/Lozumi/PRISM" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-accent transition-colors"
