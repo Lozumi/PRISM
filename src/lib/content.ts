@@ -53,6 +53,18 @@ function parseAuthor(authorStr: string): Author {
     };
 }
 
+function normalizeDateValue(value: unknown): string | undefined {
+    if (typeof value === 'string' && value.trim()) {
+        return value;
+    }
+
+    if (value instanceof Date && !Number.isNaN(value.getTime())) {
+        return value.toISOString().slice(0, 10);
+    }
+
+    return undefined;
+}
+
 // Get publications from TOML with proper type conversion
 export function getPublicationsFromToml(filename: string): Publication[] {
     const tomlData = getTomlContent<{ publication?: Record<string, unknown>[] }>(filename);
@@ -66,6 +78,7 @@ export function getPublicationsFromToml(filename: string): Publication[] {
             ...pub,
             type: pub.pubType || pub.type, // Map pubType to type
             researchArea: pub.researcharea || pub.researchArea, // Map researcharea to researchArea
+            date: normalizeDateValue(pub.date) || normalizeDateValue(pub.publishedDate),
             authors: Array.isArray(pub.authors) 
                 ? pub.authors.map((author: string | Author) => 
                     typeof author === 'string' ? parseAuthor(author) : author

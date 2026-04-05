@@ -22,6 +22,7 @@ export interface Publication {
   issue?: string;
   pages?: string;
   year: number;
+  date?: string;
   month?: string;
   publishedDate?: string;
   doi?: string;
@@ -48,6 +49,7 @@ export interface Publication {
   summary?: string;
   researchArea: ResearchArea;
   description?: string;
+  contribution?: string;
   aspectRatio?: string;
 }
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -13,8 +13,34 @@ interface SelectedPublicationsProps {
     enableOnePageMode?: boolean;
 }
 
+function getPublicationTimestamp(pub: Publication): number {
+    const rawDate = pub.date || pub.publishedDate;
+    if (rawDate) {
+        const timestamp = new Date(rawDate).getTime();
+        if (!Number.isNaN(timestamp)) {
+            return timestamp;
+        }
+    }
+
+    return new Date(pub.year, 11, 31).getTime();
+}
+
 export default function SelectedPublications({ publications, title = 'Selected Publications', enableOnePageMode = false }: SelectedPublicationsProps) {
     const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+    const sortedPublications = useMemo(() => {
+        return [...publications].sort((a, b) => {
+            const diff = getPublicationTimestamp(b) - getPublicationTimestamp(a);
+            if (diff !== 0) {
+                return diff;
+            }
+
+            if (b.year !== a.year) {
+                return b.year - a.year;
+            }
+
+            return a.title.localeCompare(b.title);
+        });
+    }, [publications]);
 
     return (
         <>
@@ -33,7 +59,7 @@ export default function SelectedPublications({ publications, title = 'Selected P
                 </Link>
             </div>
             <div className="space-y-4">
-                {publications.map((pub, index) => (
+                {sortedPublications.map((pub, index) => (
                     <motion.div
                         key={pub.id}
                         initial={{ opacity: 0, y: 20 }}

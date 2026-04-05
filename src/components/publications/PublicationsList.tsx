@@ -38,6 +38,33 @@ interface PublicationCardProps {
     setExpandedAbstractId: (id: string | null) => void;
 }
 
+function getPublicationTimestamp(pub: Publication): number {
+    const rawDate = pub.date || pub.publishedDate;
+    if (rawDate) {
+        const timestamp = new Date(rawDate).getTime();
+        if (!Number.isNaN(timestamp)) {
+            return timestamp;
+        }
+    }
+
+    return new Date(pub.year, 11, 31).getTime();
+}
+
+function sortPublicationsDescByDate(items: Publication[]): Publication[] {
+    return [...items].sort((a, b) => {
+        const diff = getPublicationTimestamp(b) - getPublicationTimestamp(a);
+        if (diff !== 0) {
+            return diff;
+        }
+
+        if (b.year !== a.year) {
+            return b.year - a.year;
+        }
+
+        return a.title.localeCompare(b.title);
+    });
+}
+
 function PublicationCard({
     pub,
     index,
@@ -119,8 +146,14 @@ function PublicationCard({
                     </div>
 
                     {pub.description && (
-                        <p className="text-sm text-neutral-600 dark:text-neutral-500 mb-4">
-                            {pub.description}
+                        <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 mb-3">
+                            <span className="font-semibold">TL;DR:</span> {pub.description}
+                        </p>
+                    )}
+
+                    {pub.contribution && (
+                        <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400 mb-4">
+                            <span className="font-semibold">Contributions:</span> {pub.contribution}
                         </p>
                     )}
 
@@ -460,8 +493,10 @@ export default function PublicationsList({ config, publications, embedded = fals
                     <>
                         {/* Publications (Papers & Books) Section */}
                         {(() => {
-                            const publicationsItems = filteredPublications.filter(pub => 
-                                ['Conference', 'Journal', 'Book', 'Workshop', 'Preprint'].includes(pub.type)
+                            const publicationsItems = sortPublicationsDescByDate(
+                                filteredPublications.filter(pub => 
+                                    ['Conference', 'Journal', 'Book', 'Workshop', 'Preprint'].includes(pub.type)
+                                )
                             );
                             
                             if (publicationsItems.length === 0) return null;
@@ -492,8 +527,10 @@ export default function PublicationsList({ config, publications, embedded = fals
 
                         {/* Patents (Patents & Software Copyrights) Section */}
                         {(() => {
-                            const patentsItems = filteredPublications.filter(pub => 
-                                ['Patent', 'Software Copyright'].includes(pub.type)
+                            const patentsItems = sortPublicationsDescByDate(
+                                filteredPublications.filter(pub => 
+                                    ['Patent', 'Software Copyright'].includes(pub.type)
+                                )
                             );
                             
                             if (patentsItems.length === 0) return null;
