@@ -1,6 +1,6 @@
 [site]
 title = "Like Liu"
-description = "Undergraduate student in Software Engineering at Northwestern Polytechnical University."
+description = "Undergraduate student in Software Engineering at Northwestern Polytechnical University (NPU)."
 favicon = "/favicon.svg"
 last_updated = "April 5, 2026"
 
@@ -21,7 +21,7 @@ location_details = [
   "Northwestern Polytechnical University,",
   "Xi'an, Shaanxi, China"
 ]
-google_scholar = ""
+google_scholar = "https://scholar.google.com/citations?user=EcxlcfYAAAAJ"
 orcid = ""
 github = "https://github.com/Lozumi"
 linkedin = ""

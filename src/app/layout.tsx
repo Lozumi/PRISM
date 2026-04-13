@@ -10,8 +10,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const config = getConfig();
   return {
     title: {
-      default: `${config.author.name} | Homepage`,
-      template: `${config.author.name} | %s`
+      default: `Homepage - ${config.author.name}`,
+      template: `%s - ${config.author.name}`
     },
     description: config.site.description,
     keywords: [config.author.name, config.author.category, "Research", config.author.university],
